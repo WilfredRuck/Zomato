@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'food#index'
   get 'food/index'
 
   get 'food/show'

@@ -1,2 +1,14 @@
-<h1>Food#index</h1>
-<p>Find me in app/views/food/index.html.erb</p>
+<div class="serverHide">Server Down. Check back in 24hours...</div>
+<!-- SERVER MESSAGE THAT ONLY DISPLAYS IF SERVER IS DOWN -->
+
+<h1>Restaurants</h1>
+<div class="js-restaurant-name"></div>
+
+
+<script type="text/javascript"> 
+	// THIS FUCTION GETS THE SNACK API INFO AS SOON AS THE PAGE LOADS
+	function start() {
+		getRestaurants()
+	}
+	window.onload = start;
+</script>
