@@ -31,12 +31,12 @@ function getRestaurants(theEvent){
 	}	
 }
 
-function getReviews(res_id){
+function getReviews(id){
 
 	$.ajax({
 		// AJAX REQUEST FOR THE ZOMATO RESTAURANT REVIEWS API DATA
 		type: "GET",
-		url: `https://developers.zomato.com/api/v2.1/reviews?res_id=`+ res_id + `?apikey=e94b4a66e7b94a94dd2fca0251fcd923`,
+		url: `https://developers.zomato.com/api/v2.1/reviews?res_id=`+ id + `&apikey=e94b4a66e7b94a94dd2fca0251fcd923`,
 		success: showReviews,
 		error: handleError
 	});
