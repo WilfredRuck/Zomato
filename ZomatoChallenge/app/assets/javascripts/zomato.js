@@ -9,11 +9,8 @@ function getRestaurants (theEvent){
 	});
 
 	function showRestaurants(response){
-		console.log("thumbs up");
 		var item = response;
-		console.log(item);
 		item.restaurants.forEach(function(place) { 
-			console.log(place)
 			// APPENDS EACH RESTAURANT FROM API TO HTML
 			var html =` 
 				<div> ${place.restaurant.name} </div> 
@@ -23,8 +20,6 @@ function getRestaurants (theEvent){
 	}
 
 	function handleError(error){
-		console.log("thumbs down");
-		console.log(error.responseText);
 		$(document).ready(function(){
 			// DISPLAYS MESSAGE IF SERVER IS DOWN
 			$( "body" ).addClass( "serverDown" );
