@@ -10,6 +10,7 @@ function getRestaurants (theEvent){
 
 	function showRestaurants(response){
 		var item = response;
+		var myJSON = JSON.stringify(item.restaurants)
 		item.restaurants.forEach(function(place) { 
 			// APPENDS EACH RESTAURANT FROM API TO HTML
 			var html =` 
