@@ -4,13 +4,12 @@ function getRestaurants(theEvent){
 		// AJAX REQUEST FOR THE ZOMATO RESTAURANTS API DATA
 		type: "GET",
 		url: `https://www.zomato.com/api/v2.1/search?apikey=e94b4a66e7b94a94dd2fca0251fcd923`,
-		success: saveRestaurants,
+		success: showRestaurants,
 		error: handleError
 	});
 
-	function saveRestaurants(response){
+	function showRestaurants(response){
 		var item = response;
-		console.log(item.restaurants)
 		item.restaurants.forEach(function(place) {
 
 			// APPENDS EACH RESTAURANT FROM API TO HTML
@@ -32,4 +31,21 @@ function getRestaurants(theEvent){
 	}	
 }
 
+function getReviews(res_id){
 
+	$.ajax({
+		// AJAX REQUEST FOR THE ZOMATO RESTAURANT REVIEWS API DATA
+		type: "GET",
+		url: `https://developers.zomato.com/api/v2.1/reviews?res_id=`+ res_id + `?apikey=e94b4a66e7b94a94dd2fca0251fcd923`,
+		success: showReviews,
+		error: handleError
+	});
+
+	function showReviews(response) {
+		console.log("success!");
+	}
+
+	function handleError(error) {
+		console.log("error!");
+	}
+}
