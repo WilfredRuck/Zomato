@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rating: 1
+  review_text: MyText
+  review_time_friendly: MyString
+  rating_text: MyString
+  likes: 1
+  username: MyString
+  foodie_level: MyString
+  foodie_level_num: MyString
+  profile_image: MyText
+
+two:
+  rating: 1
+  review_text: MyText
+  review_time_friendly: MyString
+  rating_text: MyString
+  likes: 1
+  username: MyString
+  foodie_level: MyString
+  foodie_level_num: MyString
+  profile_image: MyText
