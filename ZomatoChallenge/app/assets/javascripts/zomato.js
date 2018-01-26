@@ -13,10 +13,12 @@ function getRestaurants(theEvent){
 		item.restaurants.forEach(function(place) {
 
 			// APPENDS EACH RESTAURANT FROM API TO HTML
-			var html =` 
-				<a href="/show" onclick="getReviews(${place.restaurant.R.res_id})">
-					${place.restaurant.name}
-				</a>
+			var html =`
+				<div class="restaurant"> 
+					<a href="/show" onclick="getReviews(${place.restaurant.R.res_id})">
+						${place.restaurant.name}
+					</a>
+				</div>
 			`;
 			$('.js-restaurant-name').append(html);
 		});
