@@ -31,21 +31,41 @@ function getRestaurants(theEvent){
 	}	
 }
 
-function getReviews(id){
+function getReviews(res_id){
 
 	$.ajax({
 		// AJAX REQUEST FOR THE ZOMATO RESTAURANT REVIEWS API DATA
 		type: "GET",
-		url: `https://developers.zomato.com/api/v2.1/reviews?res_id=`+ id + `&apikey=e94b4a66e7b94a94dd2fca0251fcd923`,
+		url: `https://developers.zomato.com/api/v2.1/reviews?res_id=`+ res_id + `&apikey=e94b4a66e7b94a94dd2fca0251fcd923`,
 		success: showReviews,
 		error: handleError
 	});
 
 	function showReviews(response) {
 		console.log("success!");
+		var review = response;
+		var count = review.length
+		review.user_reviews.forEach(function(x) {
+		console.log(x);
+			// APPENDS EACH RESTAURANT FROM API TO HTML
+			var html =`
+				<div class="review">
+					<div> ${x.review.user.name} </div>
+					<div> ${x.review.rating} </div>
+					<div> ${x.review.rating_text} </div>
+					<div> ${x.review.review_text} </div>
+					<div> ${x.review.review_time_friendly} </div>
+				</div>
+			`;
+			$('.js-review-text').append(html);
+		});
 	}
 
 	function handleError(error) {
-		console.log("error!");
+		$(document).ready(function(){
+			// DISPLAYS MESSAGE IF SERVER IS DOWN
+			$( "body" ).addClass( "serverDown" );
+			$( "div" ).addClass( "serverMessage" );
+		});
 	}
 }
