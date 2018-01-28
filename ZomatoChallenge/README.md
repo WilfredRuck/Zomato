@@ -33,10 +33,10 @@ I was expecting to find the restaurant's name in each review but it wasn't there
 
 #### Please describe yourself using JSON.
 
-{
-	"first_name": "Wilfred",
-	"last_name": "Ruck",
-	"age": 26,
-	"interests": ["Music", "Running","Writing","Photography"],
-	"personality": ["Adaptable","Adventurous","Punctual","Humorous","Organized"]
+{<br>
+	"first_name": "Wilfred",<br>
+	"last_name": "Ruck",<br>
+	"age": 26,<br>
+	"interests": ["Music", "Running","Writing","Photography"],<br>
+	"personality": ["Adaptable","Adventurous","Punctual","Humorous","Organized"]<br>
 }
