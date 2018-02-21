@@ -44,7 +44,6 @@ function getInfoAndReviews(res_id){
 	});
 
 	function showInfo(response) {
-		console.log("success!");
 			// APPENDS EACH RESTAURANT INFO FROM API TO HTML
 			var html =`
 				<h1> ${response.name} </h1>
@@ -73,11 +72,9 @@ function getInfoAndReviews(res_id){
 	});
 
 	function showReviews(response) {
-		console.log("success!");
 		var review = response;
 		var count = review.length
 		review.user_reviews.forEach(function(x) {
-		console.log(x);
 			// APPENDS EACH RESTAURANT FROM API TO HTML
 			var html =`
 				<div class="review">
